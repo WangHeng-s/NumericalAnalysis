@@ -1,0 +1,35 @@
+exp1包包含三种插值方法的简单实现。
+LagrangeM.py中实现了Lagrange插值法
+    class LagrangeM
+        classAttribute __x: list  # 插值节点横坐标
+                       __y: list  # 插值节点纵坐标
+        classMethod fx(x0)  # 返回根据构造好的插值函数求得的f(x0)估计值
+                    add(x0, y0)  # 增加插值节点
+                    paint()  # 绘出曲线
+                    __getlx(x0)  # 求基函数在x0处的值，以列表返回
+
+NewtonM.py中实现了Newton插值法
+    class Table  # 差商表
+        classAttribute
+            __x: list  # 插值节点横坐标
+            __y: list  # 插值节点纵坐标
+            __table: list  # 差商表（列表形式）
+        classMethod
+            getTable() # 返回一个二维list表示的差商表
+            add(x0, y0)  #添加新节点，更新差商表
+    class NewtonM
+        classAttribute
+            __x: list  # 插值节点横坐标
+            __y: list  # 插值节点纵坐标
+            __table: Table  # 差商表对象
+        classMethod
+            fx(x0)  # 返回根据构造好的插值函数求得的f(x0)估计值
+            add(x0, y0)  # 增加插值节点
+            paint()  # 绘出拟合曲线
+
+LeastSquareM.py中实现了利用最小二乘法和一次函数拟合曲线
+    class LeastSquareM
+        classMethod fx(x0)  # 返回根据构造好的曲线求得的f(x0)估计值
+                    add(x0, y0)  # 增加插值节点，更新拟合曲线
+                    result()  # 返回一个str类型的函数表达式
+                    paint()  # 绘出拟合曲线

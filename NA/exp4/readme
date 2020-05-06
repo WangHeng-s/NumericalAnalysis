@@ -1,0 +1,51 @@
+exp4包包含三种数值求根方法的简单实现
+
+Dichotomy.py中实现了二分法求解 f(x) = 0 的根
+    class Dichotomy
+        classAttribute
+            __function: F.Function
+            __p: float  # precision，精度
+            __left: float
+            __right: float  # 初始求解区间
+            __result: float  # 结果
+        classMethod
+            __do()  # 计算
+            setp(p)  # 修改精度
+            setRange(left, right)  # 修改初始寻根区间
+            setfx(fchoice)  # 选择函数f(x)
+            setArgs(args)  # 设置函数f(x)的参数
+            getResult()  # 获取结果
+
+NewtonLM.py中实现了牛顿迭代法求解 f(x) = 0 在x0附近的根
+    class NewtonLM
+        classAttribute
+            __function: F.Function  # f(x)
+            __functionD: F.Function  # f'(x)
+            __x0: float  # 初始迭代点
+            __times = 5  # 迭代次数，默认为5
+            __result: float  # 结果
+        classMethod
+            __do()  # 计算
+            setx0(x0)  # 修改初始迭代点x0
+            setfx(fchoice)  # 选择函数f(x)
+            setfdx(fdchoice)  # 修改f'(x)
+            setfxArgs(args)  # 设置函数f(x)的参数
+            setfdxArgs(args)  # 设置f'(x)的参数
+            setTimes(times)  # 设置迭代次数
+            getResult()  # 获取结果
+
+SecantM.py中实现了弦截法法求解 f(x) = 0 的根
+    class SecantM
+        classAttribute
+            __function: F.Function  # f(x)
+            __x0: float
+            __x1: float  # 开始值
+            __times = 5  # 迭代次数，默认为5
+            __result: float  # 结果
+        classMethod
+            __do()  # 计算
+            setx(x0, x1)  # 修改初始迭代点x0, x1
+            setfx(fchoice)  # 选择函数f(x)
+            setArgs(args)  # 设置函数f(x)的参数
+            setTimes(times)  # 设置迭代次数
+            getResult()  # 获取结果

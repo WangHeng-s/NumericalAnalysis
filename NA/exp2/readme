@@ -1,0 +1,28 @@
+exp2包包含两种数值积分方法的简单实现
+
+CompositeTM.py中实现了复化梯形求积公式
+    class CompositeTM
+        classAttribute
+            __left: float
+            __right: float  # 求积区间
+            __n: int  # 区间等分数 n >= 1
+            __step: float  # 小区间步长
+            __function: f.Function  # 被积函数
+        classMethod
+            setfx(fchoice)  # 修改被积函数
+            setArgs(*args)  # 修改被积函数的参数
+            setRange(left, right)  # 修改求积区间
+            setn(n)  # 修改求积区间的等分数
+            getResult() # 返回积分值
+
+RombergM.py中实现了用Romberg算法加速梯形二分法的收敛
+    class RombergM
+        classAttribute
+            __left: float
+            __right: float  # 求积区间
+            __function: f.Function  # 被积函数
+        classMethod
+            setfx(fchoice)  # 修改被积函数
+            setArgs(*args)  # 修改被积函数的参数
+            setRange(left, right)  # 修改求积区间
+            getResult() # 返回积分值

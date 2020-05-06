@@ -1,0 +1,33 @@
+exp3包包含两种一阶常微分方程的初值问题的数值解法的简单实现
+
+EulerM.py中实现了改进的Euler法求解
+    class EulerM
+        classAttribute
+            __x0: float
+            __y0: float  # 初始条件
+            __function: F.Function  # f'(x) = f(x, y) 的右式
+            __h: float  # 步长，默认为0.1
+            __times: int  # 步数，默认为10
+            __x: list
+            __y: list  # 结果集
+        classMethod
+            seth(h)  # 修改步长
+            setTimes(times)  # 修改步数
+            getResult() # 返回积分值
+            __do()  # 根据步长、步数、x0、y0以及f(x, y)求解
+
+RungeKuttaM.py中实现了利用四阶龙格—库塔方法的经典格式求解
+    class RungeKuttaM
+        classAttribute
+            __x0: float
+            __y0: float  # 初始条件
+            __function: F.Function  # f'(x) = f(x, y) 的右式
+            __h: float  # 步长，默认为0.1
+            __times: int  # 步数，默认为10
+            __x: list
+            __y: list
+        classMethod
+            seth(h)  # 修改步长
+            setTimes(times)  # 修改步数
+            getResult() # 返回积分值
+            __do()  # 根据步长、步数、x0、y0以及f(x, y)求解
